@@ -1,9 +1,18 @@
 # Switch branches to see
 
-### Know how to import the Event Emitter class
+### Create a program with the readline module
 
-### Emit created events with and without arguments
+The readline module provides an interface for reading data from a Readable stream such as process.stdin one line at a time
 
-### create a custom object/class that takes advantage of user events
+### From the readline module, understand and utilize:
 
-### Note: Events get emitted synchronously
+- createInterface()
+- question()
+- close()
+- setPrompt()
+- prompt()
+- on()
+
+### Create a program the asks what is the sum of something and print out the answer if correct and if incorrect prompt them to try again until the correct answer is written.
+
+###

@@ -1,33 +1,11 @@
-const EventEmitter = require('events');
-const eventEmitter = new EventEmitter(); // All objects that emit events are instances of the EventEmitter class
-
-// This function allows one more functions to be attached to named event emitted by the object.
-eventEmitter.on('sum', (): void => {
-	console.log(1 + 2);
-});
-
-eventEmitter.on('subtract', (num1: number, num2: number): void => {
-	console.log(num1 - num2);
-});
-
-eventEmitter.emit('sum');
-eventEmitter.emit('subtract', 10, 9);
-
-class Person extends EventEmitter {
-	constructor(name: string) {
-		super();
-		this._name = name;
-	}
-
-	get name(): string {
-		return this._name;
-	}
-}
-
-const jose = new Person('jose');
-const jazz = new Person('jazz');
-eventEmitter.on('name', (name: string): void => {
-	console.log(`This is ${name}`);
-});
-eventEmitter.emit('name', jose.name);
-eventEmitter.emit('name', jazz.name);
+// 1. import readline module
+// 2. Declare rl and initialize it with the method createInterface from readline
+//    a. Make sure it takes in object to be able to read input and log output
+// 3. Declare and initialize two variables num1 and num2 and instantiate them with random whole numbers using:
+// Math.floor(Math.random() * 10 + 1)
+// 4. Declare an answer variable with num1 and num2
+// 5. Using the question method from readline, prompt the following question:
+//    a. What is num1 + num2
+// 6. If the answer is correct, close the program with 'Correct!' logged out.
+// 7. If the answer is incorrect, log 'Incorrect, please try again.'
+// Note: Make sure to not have the program close until the correct answer is provided.
