@@ -1,5 +1,9 @@
 # Switch branches to see
 
-### Export a function from one file to another using commonJS module
+### Know how to import the Event Emitter class
 
-### Display two way you can export functions, variables and classes with commonJS
+### Emit created events with and without arguments
+
+### create a custom object/class that takes advantage of user events
+
+### Note: Events get emitted synchronously
