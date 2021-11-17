@@ -1,40 +1,45 @@
-// 1. import readline module
-// 2. Declare rl and initialize it with the method createInterface from readline
-//    a. Make sure it takes in object to be able to read input and log output
-// 3. Declare and initialize two variables num1 and num2 and instantiate them with random whole numbers using: Math.floor((Math.random() * 10) + 1)
-// 4. Declare an answer variable with num1 and num2
-// 5. Using the question method from readline, prompt the following question:
-//    a. What is num1 + num2
-// 6. If the answer is correct, close the program with 'Correct!' logged out.
-// 7. If the answer is incorrect, log 'Incorrect, please try again.'
-// Note: Make sure to not have the program close until the correct answer is provided.
-const readline = require('readline');
-const rl = readline.createInterface({
-	input: process.stdin,
-	output: process.stdout,
+// 1. Declare a const called fs and initialize it with the 'fs' import to import the file system module
+const fs = require('fs');
+// 2. Create and read a file using the writeFile method from file system module
+// fs.writeFile('myFile.txt', 'Hi everyone, this is my file!', (err: string) => {
+// 	if (err) {
+// 		console.log(err);
+// 	} else {
+// 		console.log('file has been created');
+// 		fs.readFile('myFile.txt', 'utf-8', (err: string, data: string) => {
+// 			if (err) {
+// 				console.log(err);
+// 			} else {
+// 				console.log(data);
+// 			}
+// 		});
+// 	}
+// });
+fs.writeFile('test.ts', 'const greeting = "hello world"', (err: string) => {
+	err ? console.log(err) : console.log('File created successfully');
 });
+// 3. Rename a file using the readFile method from file system module
+// fs.rename('myFile.txt', 'myIntro.txt', (err: string) => {
+// 	if (err) {
+// 		console.log(err);
+// 	} else {
+// 		console.log('File has been renamed successfully.');
+// 	}
+// });
 
-let num1 = Math.floor(Math.random() * 10 + 1);
-let num2 = Math.floor(Math.random() * 10 + 1);
-let answer = num1 + num2;
-
-// the question method displays the query by writing it to the output, waits for user input to be provided on input, then invokes the callback function passing the provided input as the first argument.
-rl.question(`What is ${num1} + ${num2}?\n`, (userInput: string) => {
-	if (userInput.trim() === answer.toString()) {
-		console.log(`Correct!!!`);
-		rl.close(); // this method closes the InterfaceConstructor** instance and relinquishes control over the input and output streams. When called, the 'close' event will be emitted.
-	} else {
-		console.log(`Incorrect, please try again!`);
-		rl.on('line', (userInput: string) => {
-			if (userInput.trim() === answer.toString()) {
-				console.log(`Correct!!!`);
-				rl.close();
-			} else {
-				rl.setPrompt(`Incorrect, you've entered ${userInput}, try again.\n`);
-				rl.prompt();
-			}
-		});
-	}
-});
-
-// InterfaceConstructor extends the EventEmitter class where instances are constructed using the readlinePromises.createInterface() or readline.createInterface() method.
+// 4. Append content to the file using the appendFile method from file system module
+// fs.appendFile(
+// 	'myIntro.txt',
+// 	' I will be a huge success to the world by the time I am 40!',
+// 	(err: string) => {
+// 		if (err) {
+// 			console.log(err);
+// 		} else {
+// 			console.log('Content successfully appended to file.');
+// 		}
+// 	}
+// );
+// 5. Delete file using the unlink method from file system module
+// fs.unlink('myIntro.txt', (err: string) => {
+// 	err ? console.log(err) : console.log('File successfully deleted!');
+// });
