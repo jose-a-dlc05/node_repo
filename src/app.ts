@@ -1,12 +1,2 @@
-import { IncomingMessage, ServerResponse } from 'http';
-
-const http = require('http');
-const fs = require('fs');
-
-http
-	.createServer((req: IncomingMessage, res: ServerResponse) => {
-		const readStream = fs.createReadStream('./static/example.jpg');
-		res.writeHead(200, { 'Content-Type': 'image/jpg' });
-		readStream.pipe(res);
-	})
-	.listen(3000);
+// 1. Import http and fs modules
+// 2. Create a server where you can server either, html, images or json files statically
