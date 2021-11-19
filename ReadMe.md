@@ -2,18 +2,13 @@
 
 ### From the file system module, understand and utilize:
 
-- createReadStream()
-- createWriteStream()
+- zlib() - file compression
+- stream.pipe() - method used to take a readable stream and connect it to a writeable stream.
+- createGzip() - Compress data using gzip
+- createGunzip() - decompress a gzip stream
 
-## Define what a buffer is
+### Zip file using createGzip
 
-- A buffer is a piece or part of a computer's memory that is put aside as a placeholder for data being sent or received from a file in this case as it can also pertain to data being sent back and forth from
-  I/O devices or hard drives.
+### Unzip file using createGunzip
 
-### Defend why it is better to read data in chunks
-
-You can immediately start modifying that chunk without waiting for the next chunk of data to load.
-
-### Discuss why it is better to read data in streams
-
-- Streams do not read the full file at once. It does not use a full buffer like readFile() would.
+[!How to use stream.pipe()](https://nodejs.org/en/knowledge/advanced/streams/how-to-use-stream-pipe/)

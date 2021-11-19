@@ -1,12 +1,12 @@
 const fs = require('fs');
 const zlib = require('zlib');
 
-const gzip = zlib.createGzip();
+// Zip a file
+// const gzip = zlib.createGzip(); // returns a transform stream
 
-const readStream = fs.createReadStream('./example.txt', 'utf-8'); // returns a readable stream
-const writeStream = fs.createWriteStream('example3.txt');
-readStream.on('data', (chunk: string) => {
-	writeStream.write(chunk);
-});
-// const writeStream = fs.createWriteStream('example2.gz');
-// readStream.pipe(gzip).pipe(writeStream);
+// Unzip a file
+const gunzip = zlib.createGunzip();
+// const readStream = fs.createReadStream('./example2.txt.gz', 'utf-8'); // returns a readable stream
+const readStream = fs.createReadStream('./example2.txt.gz'); // returns a readable stream
+const writeStream = fs.createWriteStream('uncompressed.txt');
+readStream.pipe(gunzip).pipe(writeStream); // Takes the content from example.txt and transfers it over to example2.txt
