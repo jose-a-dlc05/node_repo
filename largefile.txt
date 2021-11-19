@@ -1,0 +1,1 @@
+Imagine this file to be 2.7gb and you use readFile vs createReadStream and use the event listener for 'data'
