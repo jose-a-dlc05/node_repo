@@ -1,12 +1,5 @@
-const fs = require('fs');
-const zlib = require('zlib');
-
-// Zip a file
-// const gzip = zlib.createGzip(); // returns a transform stream
-
-// Unzip a file
-const gunzip = zlib.createGunzip();
-// const readStream = fs.createReadStream('./example2.txt.gz', 'utf-8'); // returns a readable stream
-const readStream = fs.createReadStream('./example2.txt.gz'); // returns a readable stream
-const writeStream = fs.createWriteStream('uncompressed.txt');
-readStream.pipe(gunzip).pipe(writeStream); // Takes the content from example.txt and transfers it over to example2.txt
+// 1. Import the http module
+// 2. Declare a const called server and initialize it with createServer method which takes a callback function with request and response parameters.
+//    a. If the request has a path url of '/' then respond with 'Hello world from nodejs'.
+//    b. otherwise respond with 'Using some other domain
+// 3. Start listening for requests by listening for port number of your choice
